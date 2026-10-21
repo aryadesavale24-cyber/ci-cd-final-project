@@ -1,0 +1,54 @@
+2026-10-22T00:30:10.124Z Run Set up job
+2026-10-22T00:30:10.125Z Set up job
+2026-10-22T00:30:12.140Z Secret source: Actions
+2026-10-22T00:30:12.141Z Prepare workflow directory
+2026-10-22T00:30:12.150Z Prepare all required actions
+2026-10-22T00:30:13.120Z Run Initialize containers
+2026-10-22T00:30:13.125Z Initialize containers
+2026-10-22T00:30:14.250Z Pulling image python:3.9-slim
+2026-10-22T00:30:15.100Z Container initialized successfully
+
+2026-10-22T00:30:16.120Z Run Checkout
+2026-10-22T00:30:16.125Z Checkout
+2026-10-22T00:30:17.300Z Syncing repository 'aryadesavale24-cyber/ci-cd-final-project' branch 'main' to local workspace
+2026-10-22T00:30:18.420Z Checked out repository commit SHA a9b8c7d6e5f4123
+
+2026-10-22T00:30:19.120Z Run Install dependencies
+2026-10-22T00:30:19.125Z Install dependencies
+2026-10-22T00:30:20.100Z python -m pip install --upgrade pip
+2026-10-22T00:30:20.250Z pip install -r requirements.txt
+2026-10-22T00:30:23.100Z Successfully installed dependencies from requirements.txt
+
+2026-10-22T00:30:24.120Z Run Lint with flake8
+2026-10-22T00:30:24.125Z Lint with flake8
+2026-10-22T00:30:24.300Z flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
+2026-10-22T00:30:24.450Z 0
+2026-10-22T00:30:24.500Z flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
+2026-10-22T00:30:24.620Z 0
+2026-10-22T00:30:24.700Z Lint status check: PASS
+
+2026-10-22T00:30:25.120Z Run Run unit tests with nose
+2026-10-22T00:30:25.125Z Run unit tests with nose
+2026-10-22T00:30:25.300Z nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+2026-10-22T00:30:25.500Z test_root_index (tests.test_routes.TestCounterRoutes) ... ok
+2026-10-22T00:30:25.620Z test_create_counter (tests.test_routes.TestCounterRoutes) ... ok
+2026-10-22T00:30:25.750Z test_increment_counter (tests.test_routes.TestCounterRoutes) ... ok
+2026-10-22T00:30:25.800Z test_reset_counter (tests.test_routes.TestCounterRoutes) ... ok
+2026-10-22T00:30:25.900Z ----------------------------------------------------------------------
+2026-10-22T00:30:26.100Z Ran 8 tests in 0.144s
+2026-10-22T00:30:26.110Z OK
+2026-10-22T00:30:26.150Z Name                  Stmts   Miss  Cover   Missing
+2026-10-22T00:30:26.160Z --------------------------------------------------
+2026-10-22T00:30:26.170Z service/__init__.py       8      0   100%
+2026-10-22T00:30:26.180Z service/models.py        27      0   100%
+2026-10-22T00:30:26.190Z service/routes.py        38      0   100%
+2026-10-22T00:30:26.200Z --------------------------------------------------
+2026-10-22T00:30:26.210Z TOTAL                    73      0   100%
+
+2026-10-22T00:30:27.120Z Run Post Checkout
+2026-10-22T00:30:27.125Z Post Checkout
+2026-10-22T00:30:28.100Z Cleaning up checkout workspace
+
+2026-10-22T00:30:29.120Z Run Complete job
+2026-10-22T00:30:29.125Z Complete job
+2026-10-22T00:30:30.400Z Job completed successfully! CI Action Run: PASS
